@@ -5,8 +5,8 @@
 //Solution: Add interactivity so the user can manage daily tasks.
 //Break things down into smaller steps and take each step at a time.
 
-
 // Event handling, user interaction is what starts the code execution.
+
 var taskInput = document.getElementById("new-task"); //Add a new task.
 var addButton = document.getElementsByTagName("button")[0]; //first button
 var incompleteTaskHolder = document.getElementById("incompleted-tasks"); //ul of #incompleted-tasks
@@ -15,7 +15,7 @@ var completedTasksHolder = document.getElementById("completed-tasks"); //complet
 //New task list item
 var createNewTaskElement = function (taskString) {
   var listItem = document.createElement("li");
-  listItem.classList.add('tasks-block__item');
+    listItem.classList.add('tasks-block__item');
 
   //input (checkbox)
   var checkBox = document.createElement("input");
@@ -65,7 +65,7 @@ var addTask = function () {
   //Append listItem to incompleteTaskHolder
   incompleteTaskHolder.appendChild(listItem);
   bindTaskEvents(listItem, taskCompleted);
-  
+
   taskInput.value = "";
 };
 
@@ -79,9 +79,9 @@ var editTask = function () {
 
   var editInput = listItem.querySelector("input[type=text]");
   var label = listItem.querySelector("label");
-  var editBtn = listItem.querySelector(".edit");
+  var editBtn = listItem.querySelector(".tasks-block__edit-task");
   var containsClass = listItem.classList.contains("edit-mode");
-  //If class of the parent is .editmode
+  //If class of the parent is .edit-mode
   if (containsClass) {
     //switch to .edit-mode
     //label becomes the inputs value.
@@ -97,7 +97,7 @@ var editTask = function () {
 };
 
 //Delete task.
- var deleteTask = function () {
+var deleteTask = function () {
   console.log("Delete Task...");
 
   var listItem = this.parentNode;
@@ -141,8 +141,8 @@ var bindTaskEvents = function (taskListItem, checkBoxEventHandler) {
   console.log("bind list item events");
   //select ListItems children
   var checkBox = taskListItem.querySelector("input[type=checkbox]");
-  var editButton = taskListItem.querySelector("button.edit");
-  var deleteButton = taskListItem.querySelector("button.delete");
+  var editButton = taskListItem.querySelector("button.tasks-block__edit-task");
+  var deleteButton = taskListItem.querySelector("button.tasks-block__delete-task");
 
   //Bind editTask to edit button.
   editButton.onclick = editTask;
@@ -166,6 +166,7 @@ for (var i = 0; i < completedTasksHolder.children.length; i++) {
 }
 
 // Issues with usability don't get seen until they are in front of a human tester.
+
 //prevent creation of empty tasks.
 
 //Change edit to save when you are in edit mode.
