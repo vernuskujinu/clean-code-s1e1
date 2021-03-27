@@ -14,41 +14,52 @@
   display: block;
   text-align: right;
 }
+
 .page img {
     width: 100%;
 }
+
 .eisenhower-matrix .more-info {
     font-family: fantasy, cursive;
 }
 
 @media (max-width:768px) {
+  
 .eisenhower-matrix { 
       text-align: center;
   }
+  
 }
+
 .toDo-list {
     display: block;
     width: 500px;
     margin: 0 auto 0;
 }
+
 .task-name {
     width: 56%;
     display: inline-block;
     flex-grow: 1
 }
+
 .task-row-wrapper {
     display: flex;
 }
+
 ul {
     margin:0;
     padding: 0px;
 }
+
 li, h3 {
     list-style:none;
 }
+
 input,button{
     outline:none;
 }
+
 button {
     background: none;
     border: 0px;
@@ -58,10 +69,13 @@ button {
     font-family: Lato, sans-serif;
     cursor: pointer;
 }
+
 button:hover {
     color: #3a3A3a;
 }
+
 /* Heading */
+
 h3,
 .toDo-list__label {
     color: #333;
@@ -72,6 +86,7 @@ h3,
     margin: 0;
     text-transform: uppercase;
 }
+
 .task-name-text {
     margin: 0;
     font-size: 18px;
@@ -84,15 +99,18 @@ h3,
     font-family: Lato, sans-serif;
     color: #888;
 }
+
 .task-name-text:focus {
     color: #333;
 }
 
 /* New Task */
+
 .toDo-list__label {
     display: block;
     margin: 0 0 20px;
 }
+
 #new-task {
     width: 318px;
 }
@@ -110,6 +128,7 @@ li {
     justify-content: space-between;
     align-items: center;
 }
+
 li > * {
     vertical-align: middle;
 }
@@ -117,34 +136,41 @@ li > * {
 .input__checkbox {
     margin: 0 10px;
 }
+
 .tasks-block__item label {
     padding-left: 10px;
     box-sizing: border-box;
     font-size: 18px;
     width: 226px;
 }
+
 .tasks-block__item .task-name-text{
     width: 226px;
 }
+
 .tasks-block__item .delete-task:hover {
     color: #CF2323;
 }
+
 .delete-task__img {
     height: 2em;
     transform: rotateZ(45deg);
     transition: transform 200ms ease-in;
 }
+
 .delete-task__img:hover {
     transform: rotateZ(0);
 }
 
 /* Completed */
+
 #completed-tasks label {
     text-decoration: line-through
     color: #888;
 }
 
 /* Edit Task */
+
 .tasks-block__item .task-name-text {
     display:none
 }
