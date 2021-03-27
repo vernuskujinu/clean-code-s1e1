@@ -40,7 +40,7 @@
 .task-name {
     width: 56%;
     display: inline-block;
-    flex-grow: 1
+    flex-grow: 1;
 }
 
 .task-row-wrapper {
@@ -165,19 +165,19 @@ li > * {
 /* Completed */
 
 #completed-tasks label {
-    text-decoration: line-through
+    text-decoration: line-through;
     color: #888;
 }
 
 /* Edit Task */
 
 .tasks-block__item .task-name-text {
-    display: none
+    display: none;
 }
 
 .edit-mode .task-name-text {
     display: inline-block;
-    width: 224px
+    width: 224px;
 }
 
 .edit-mode label {
