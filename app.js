@@ -19,7 +19,7 @@ var createNewTaskElement = function (taskString) {
 
   //input (checkbox)
   var checkBox = document.createElement("input");
-  checkBox.classList.add('input__checkbox'); //checkbx
+  checkBox.classList.add('tasks-block__checkbox'); //checkbx
   //label
   var label = document.createElement("label"); //label
   //input (text)
@@ -33,17 +33,17 @@ var createNewTaskElement = function (taskString) {
   deleteButtonImg.classList.add('delete-task__img'); //delete button image
 
   label.innerText = taskString;
-  label.className = "task";
+  label.className = "tasks-block__name";
 
   //Each elements, needs appending
   checkBox.type = "checkbox";
   editInput.type = "text";
-  editInput.className = "task-name task-name-text";
+  editInput.className = "tasks-block__name task-row-wrapper__text";
 
   editButton.innerText = "Edit"; //innerText encodes special characters, HTML does not.
-  editButton.className = "edit";
+  editButton.className = "tasks-block__edit-task";
 
-  deleteButton.className = "delete";
+  deleteButton.className = "tasks-block__delete-task";
   deleteButtonImg.src = "./remove.svg";
   deleteButton.appendChild(deleteButtonImg);
 
@@ -65,6 +65,7 @@ var addTask = function () {
   //Append listItem to incompleteTaskHolder
   incompleteTaskHolder.appendChild(listItem);
   bindTaskEvents(listItem, taskCompleted);
+  
   taskInput.value = "";
 };
 
@@ -93,9 +94,10 @@ var editTask = function () {
 
   //toggle .edit-mode on the parent.
   listItem.classList.toggle("edit-mode");
+};
 
 //Delete task.
-    var deleteTask = function () {
+ var deleteTask = function () {
   console.log("Delete Task...");
 
   var listItem = this.parentNode;
@@ -123,11 +125,12 @@ var taskIncomplete = function () {
   incompleteTaskHolder.appendChild(listItem);
   bindTaskEvents(listItem, taskCompleted);
 };
+
 var ajaxRequest = function () {
   console.log("AJAX Request");
 };
-//The glue to hold it all together.
 
+//The glue to hold it all together.
 
 //Set the click handler to the addTask function.
 addButton.onclick = addTask;
@@ -156,17 +159,11 @@ for (var i = 0; i < incompleteTaskHolder.children.length; i++) {
   bindTaskEvents(incompleteTaskHolder.children[i], taskCompleted);
 }
 
-
-
-
 //cycle over completedTasksHolder ul list items
 for (var i = 0; i < completedTasksHolder.children.length; i++) {
   //bind events to list items chldren(tasksIncompleted)
   bindTaskEvents(completedTasksHolder.children[i], taskIncomplete);
 }
-
-
-
 
 // Issues with usability don't get seen until they are in front of a human tester.
 //prevent creation of empty tasks.
